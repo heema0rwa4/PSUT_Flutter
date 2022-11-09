@@ -52,10 +52,10 @@ Widget defaultFormField({
   final void Function(String?)? onSubmit,
   final void Function(String?)? onChange,
   bool isPassword = false,
-  required final  Function(String?)? validate,
+  required final FormFieldValidator<String>? validate,
   required String label,
   required IconData prefix,
-  IconData suffix,
+  IconData? suffix,
   final Function()? suffixPressed,
   bool isClickable = true,
 }) => TextFormField(

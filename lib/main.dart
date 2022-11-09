@@ -8,12 +8,14 @@ import 'package:course_implemintation_wrongspilling/modules/users/UsersScreen.da
 import 'package:course_implemintation_wrongspilling/modules/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'layout/home_layout.dart';
+
 void main() {
   runApp( MyApp());
 }
 
 
-Widget currentPage = HomeScreen();
+Widget currentPage = HomeScreenLayout();
 
 int index =0;
 class  MyApp extends StatelessWidget {
