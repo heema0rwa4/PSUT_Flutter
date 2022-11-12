@@ -16,20 +16,56 @@ class _HomeScreenLayoutState extends State<HomeScreenLayout> {
     DoneTasksScreen(),
     ArchivedTasksScreen()
   ];
+  List<String>titles =[
+    'New Tasks',
+    'Done Tasks',
+    'Archived'
+  ];
+  List<Color> colors =[
+    Colors.red,
+    Colors.green,
+    Colors.brown,
+  ];
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.black,
         centerTitle: true,
-        title: Text('To-Do App'),
+        title: Text(titles[currentIndex],
+        style: TextStyle(
+          color: colors[currentIndex]
+        ),
+        )
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () async{
+          /// error handling with try and catch
+          // try {
+          //   var name = await getName();
+          //   print(name);
+          //     throw(' this line');
+          // }catch(error){
+          //   print('The error is at${error.toString()}');
+          //
+          // }
+          /// error handling with .then
+          // getName().then((value) {
+          //
+          //   print('strintfksf');
+          //   print(value);
+          //   throw('rrrrrrrrrrrrrr');
+          // }).catchError((error){
+          //   print('${error.toString()}');
+          // });
+        },
         child: Icon(Icons.add),
       ),
       body: currentScreen[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
         type: BottomNavigationBarType.fixed,
         elevation: 0,
         currentIndex: currentIndex,
@@ -41,19 +77,24 @@ class _HomeScreenLayoutState extends State<HomeScreenLayout> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.task),
+            icon: Icon(Icons.task,color: Colors.white,),
             label: 'Tasks'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.done_outline),
+            icon: Icon(Icons.done_outline,color: Colors.white,),
             label: 'Done'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.archive),
+            icon: Icon(Icons.archive,color: Colors.white,),
             label: 'Archived'
           ),
         ],
       ),
     );
+
+  }
+ Future <String> getName() async
+ {
+ return 'name';
   }
 }
