@@ -50,6 +50,7 @@ Widget defaultFormField({
   required TextEditingController controller,
   required TextInputType type,
   final void Function(String?)? onSubmit,
+  void Function()? onTap,
   final void Function(String?)? onChange,
   bool isPassword = false,
   required final FormFieldValidator<String>? validate,
@@ -58,7 +59,9 @@ Widget defaultFormField({
   IconData? suffix,
   final Function()? suffixPressed,
   bool isClickable = true,
+
 }) => TextFormField(
+
   controller: controller,
   keyboardType: type,
   obscureText: isPassword,
@@ -80,5 +83,8 @@ Widget defaultFormField({
     )
         : null,
     border: OutlineInputBorder(),
+
   ),
+  onTap: onTap,
+
 );
