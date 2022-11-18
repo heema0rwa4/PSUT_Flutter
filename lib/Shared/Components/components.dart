@@ -88,3 +88,39 @@ Widget defaultFormField({
   onTap: onTap,
 
 );
+Widget buildTaskItem(Map model)=> Padding(
+  padding: const EdgeInsets.all(20.0),
+  child: Row(
+
+    children: [
+
+      CircleAvatar(
+        radius: 40 ,
+        child: Text(
+          '${model['time']}',
+
+        ),
+      ),
+      SizedBox(
+        width: 15.0,
+      ),
+      Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text('${model['title']}',
+            style: TextStyle(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey,
+
+            ),),
+          Text('${model['date']}',
+            style: TextStyle(
+              color: Colors.grey,
+
+            ),),
+        ],
+      )
+    ],
+  ),
+);

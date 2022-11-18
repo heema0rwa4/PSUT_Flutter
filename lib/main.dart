@@ -15,7 +15,7 @@ void main() {
 }
 
 
-Widget currentPage = HomeScreenLayout();
+Widget currentPage = CounterScreen();
 
 int index =0;
 class  MyApp extends StatelessWidget {
