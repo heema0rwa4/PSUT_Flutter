@@ -15,7 +15,7 @@ void main() {
 }
 
 
-Widget currentPage = CounterScreen();
+// Widget currentPage = CounterScreen();
 
 int index =0;
 class  MyApp extends StatelessWidget {
@@ -23,7 +23,7 @@ class  MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:currentPage,
+      home:CounterScreen(),
 
     );
   }
